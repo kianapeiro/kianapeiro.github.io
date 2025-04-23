@@ -1,25 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Itim', cursive;
+    background: linear-gradient(to bottom, #e6f3fa, #ffdde1);
     margin: 0;
     padding: 0;
-    background-color: #f0f6ff;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.5)"/></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 header {
-    background-color: #f0f6ff;
-    padding: 10px 20px;
+    background-color: #fff;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #ff9a9e;
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    color: #555;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
+    color: #ff69b4;
+    font-weight: bold;
     text-decoration: underline;
+}
+
+nav a.active {
+    color: #ff69b4;
+    font-weight: bold;
 }
 
 main {
@@ -32,7 +56,10 @@ main {
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    font-size: 2.5em;
+    color: #9b59b6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in;
 }
 
 .contact-form {
@@ -40,9 +67,13 @@ h1 {
     width: 100%;
     background-color: #fff;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-8px);
 }
 
 .contact-form label {
@@ -60,6 +91,14 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    font-family: 'Itim', cursive;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff69b4;
+    outline: none;
 }
 
 .contact-form textarea {
@@ -67,15 +106,22 @@ h1 {
 }
 
 .contact-form button {
-    background-color: #333;
+    background-color: #ff69b4;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    font-family: 'Itim', cursive;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
-    background-color: #555;
+    background-color: #ff85c0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

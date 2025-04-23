@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - My Website</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html">Homepage</a>
+            <a href="index.html" class="active">Homepage</a>
             <a href="projects.html">Projects</a>
             <a href="experiences.html">Experiences</a>
             <a href="contact.html">Contact Me</a>
@@ -22,20 +24,23 @@
             </div>
             <div class="hero-text">
                 <h1>Code with Passion, Build with Purpose</h1>
-                <p>Hello, World! I’m thrilled to welcome you to my corner of the internet. I’m a software engineer with a love for crafting solutions that make a difference. Whether it’s building sleek applications or solving complex problems, I’m all about turning ideas into reality through code. Let’s create something amazing together!</p>
+                <p>Hello, World! I’m so excited to share my little corner of the internet with you! As a software engineer, I love creating solutions that sparkle and make a difference. From sleek apps to clever code, I’m all about bringing ideas to life. Let’s make something magical together!</p>
             </div>
         </div>
         <div class="stats">
             <div class="stat-card" id="projects">
+                <i class="fas fa-folder-open"></i>
                 <p>Number of Projects</p>
                 <span>0</span>
             </div>
             <div class="stat-card" id="hours">
+                <i class="fas fa-clock"></i>
                 <p>Hours Spent on Profession</p>
                 <span>0</span>
             </div>
             <div class="stat-card" id="visitors">
-                <p>Number of Website visitors</p>
+                <i class="fas fa-users"></i>
+                <p>Number of Website Visitors</p>
                 <span>0</span>
             </div>
         </div>
@@ -47,11 +52,11 @@
                 count++;
                 document.getElementById(elementId).querySelector('span').textContent = count;
                 if (count === target) clearInterval(interval);
-            }, 10);
+            }, 20);
         }
         countUp('projects', 10);
         countUp('hours', 100);
-        countUp('visitors', 100);
+        countUp('visitors', 50);
     </script>
 </body>
 </html>

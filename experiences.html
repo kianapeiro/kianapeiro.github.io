@@ -5,44 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiences - My Website</title>
     <link rel="stylesheet" href="experiences.css">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html">Homepage</a>
             <a href="projects.html">Projects</a>
-            <a href="experiences.html">Experiences</a>
+            <a href="experiences.html" class="active">Experiences</a>
             <a href="contact.html">Contact Me</a>
         </nav>
     </header>
     <main>
         <h1>My Experiences</h1>
         <div class="experiences-container">
-            <a href="#" class="experience-card">
+            <div class="experience-card" data-modal="modal-education">
                 <img src="Pictures/education.JPG" alt="Education">
                 <h2>Education</h2>
-            </a>
-            <a href="#" class="experience-card">
+            </div>
+            <div class="experience-card" data-modal="modal-work">
                 <img src="Pictures/work.JPG" alt="Work">
                 <h2>Work</h2>
-            </a>
-            <a href="#" class="experience-card">
+            </div>
+            <div class="experience-card" data-modal="modal-awards">
                 <img src="Pictures/awards.JPG" alt="Awards">
                 <h2>Awards</h2>
-            </a>
-            <a href="#" class="experience-card">
+            </div>
+            <div class="experience-card" data-modal="modal-volunteering">
                 <img src="Pictures/volunteering.JPG" alt="Volunteering">
                 <h2>Volunteering</h2>
-            </a>
-            <a href="#" class="experience-card">
+            </div>
+            <div class="experience-card" data-modal="modal-certifications">
                 <img src="Pictures/certifications.JPG" alt="Certifications">
                 <h2>Certifications</h2>
-            </a>
-            <a href="#" class="experience-card">
+            </div>
+            <div class="experience-card" data-modal="modal-publications">
                 <img src="Pictures/publications.JPG" alt="Publications">
                 <h2>Publications</h2>
-            </a>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-education" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Education</h2>
+                <ul>
+                    <li><strong>B.S. in Computer Science</strong>, University of Techville, 2018–2022<br>Graduated with Honors, GPA: 3.9/4.0</li>
+                    <li><strong>High School Diploma</strong>, Innovate Academy, 2014–2018<br>Valedictorian, STEM Focus</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal-work" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Work</h2>
+                <ul>
+                    <li><strong>Software Engineer</strong>, CodeZap Inc., 2022–Present<br>Developed web applications using React and Node.js, improving user engagement by 30%.</li>
+                    <li><strong>Intern</strong>, TechTrend Solutions, Summer 2021<br>Assisted in building a Python-based data dashboard, reducing reporting time by 20%.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal-awards" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Awards</h2>
+                <ul>
+                    <li><strong>Innovator of the Year</strong>, Techville Hackathon, 2022<br>Won for developing an AI-powered task manager.</li>
+                    <li><strong>Dean’s List</strong>, University of Techville, 2018–2022<br>Awarded for academic excellence.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal-volunteering" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Volunteering</h2>
+                <ul>
+                    <li><strong>Coding Mentor</strong>, CodeKids, 2020–Present<br>Taught programming to 50+ underprivileged students, increasing STEM interest.</li>
+                    <li><strong>Event Organizer</strong>, Community Tech Fair, 2019<br>Coordinated workshops for 200+ attendees.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal-certifications" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Certifications</h2>
+                <ul>
+                    <li><strong>AWS Certified Developer</strong>, Amazon Web Services, 2023</li>
+                    <li><strong>Full-Stack Web Development</strong>, Coursera, 2021</li>
+                </ul>
+            </div>
+        </div>
+        <div id="modal-publications" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Publications</h2>
+                <ul>
+                    <li><strong>“Optimizing Web Performance with React”</strong>, TechBit Journal, 2023</li>
+                    <li><strong>“AI in Education: A Case Study”</strong>, Innovate Press, 2022</li>
+                </ul>
+            </div>
         </div>
     </main>
+    <script>
+        const cards = document.querySelectorAll('.experience-card');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'block';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                modal.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
