@@ -52,8 +52,8 @@ main {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-size: 2.8em;
     color: #9b59b6;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
@@ -62,14 +62,18 @@ h1 {
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .project-card {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     background-color: #fff;
     border-radius: 15px;
@@ -77,19 +81,22 @@ h1 {
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    cursor: pointer;
 }
 
 .project-card img {
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
     border: 3px solid #fff;
+    margin-bottom: 15px;
 }
 
 .project-card h2 {
     text-align: center;
-    margin-top: 10px;
-    font-size: 1.2em;
+    margin: 10px 0;
+    font-size: 1.3em;
     color: #333;
 }
 
@@ -97,21 +104,90 @@ h1 {
     text-align: center;
     color: #444;
     font-size: 1em;
+    flex-grow: 1;
 }
 
 .projects-container:hover .project-card {
-    opacity: 1;
-    transform: scale(0.9);
+    opacity: 0.7;
+    transform: scale(0.95);
     z-index: 1;
 }
 
 .project-card:hover {
     opacity: 1;
     transform: scale(1.05);
-    font-weight: 900;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     z-index: 2;
     animation: float 4s ease-in-out infinite;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    color: #9b59b6;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.modal-content p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+.modal-content a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1em;
+}
+
+.modal-content a:hover {
+    background-color: #ff9a9e;
+    transform: translateY(-2px);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8em;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ff69b4;
 }
 
 @keyframes float {
@@ -123,4 +199,73 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .project-card img {
+        height: 150px;
+    }
+
+    .project-card h2 {
+        font-size: 1.1em;
+    }
+
+    .project-card p {
+        font-size: 0.9em;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 0 10px;
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .project-card img {
+        height: 120px;
+    }
+
+    .project-card h2 {
+        font-size: 1em;
+    }
+
+    .project-card p {
+        font-size: 0.85em;
+    }
+
+    .modal-content a {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
 }

@@ -52,8 +52,8 @@ main {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-size: 2.8em;
     color: #9b59b6;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in;
@@ -62,13 +62,17 @@ h1 {
 .experiences-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .experience-card {
     color: inherit;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     background-color: #fff;
     border-radius: 15px;
@@ -81,28 +85,29 @@ h1 {
 
 .experience-card img {
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
     border: 3px solid #fff;
+    margin-bottom: 15px;
 }
 
 .experience-card h2 {
     text-align: center;
-    margin-top: 10px;
-    font-size: 1.5em;
+    margin: 10px 0;
+    font-size: 1.3em;
     color: #333;
 }
 
 .experiences-container:hover .experience-card {
-    opacity: 0.5;
-    transform: scale(0.9);
+    opacity: 0.7;
+    transform: scale(0.95);
     z-index: 1;
 }
 
 .experience-card:hover {
     opacity: 1;
     transform: scale(1.05);
-    font-weight: 900;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     z-index: 2;
     animation: float 4s ease-in-out infinite;
@@ -111,45 +116,49 @@ h1 {
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    width: 80%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
     max-width: 600px;
     position: relative;
-    animation: fadeIn 0.5s ease-in;
+    animation: slideIn 0.3s ease;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #555;
+    font-size: 1.8em;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
     color: #ff69b4;
-    text-decoration: none;
 }
 
 .modal-content h2 {
     text-align: center;
     color: #9b59b6;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 1.8em;
 }
 
 .modal-content ul {
@@ -161,75 +170,76 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.1em;
     color: #333;
+    line-height: 1.6;
+}
+
+.modal-content li strong {
+    color: #444;
 }
 
 @keyframes float {
-    0% { transform: translateY sire;
-    font-weight: 900;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    z-index: 2;}
-}
-
-.contact-form {
-    max-width: 500px;
-    width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.contact-form:hover {
-    transform: translateY(-8px);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Itim', cursive;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #ff69b4;
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: #ff69b4;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    font-family: 'Itim', cursive;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #ff85c0;
+    0% { transform: translateY(0px) scale(1.05); }
+    50% { transform: translateY(-12px) scale(1.05); }
+    100% { transform: translateY(0px) scale(1.05); }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .experiences-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .experience-card img {
+        height: 150px;
+    }
+
+    .experience-card h2 {
+        font-size: 1.1em;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+
+    .modal-content li {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        margin: 0 10px;
+        font-size: 1.1em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .experience-card img {
+        height: 120px;
+    }
+
+    .experience-card h2 {
+        font-size: 1em;
+    }
 }

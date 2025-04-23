@@ -6,7 +6,6 @@
     <title>Contact - My Website</title>
     <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,7 +18,7 @@
     </header>
     <main>
         <h1>Contact Me</h1>
-        <form class="contact-form">
+        <form class="contact-form" action="mailto:kiana.peiro80@gmail.com" method="post" enctype="text/plain">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -31,6 +30,12 @@
             
             <button type="submit">Send Message</button>
         </form>
+        <div class="social-links">
+            <a href="#github" target="_blank">👨‍💻 GitHub</a>
+            <a href="#instagram" target="_blank">📷 Instagram</a>
+            <a href="#telegram" target="_blank">📱 Telegram</a>
+        </div>
+        <p class="note">Note: Replace the social media links with your actual profiles.</p>
     </main>
 </body>
 </html>
