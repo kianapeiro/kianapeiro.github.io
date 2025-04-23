@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences - My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact - My Website</title>
+    <link rel="stylesheet" href="contact.css">
 </head>
 <body>
     <header>
@@ -12,24 +12,23 @@
             <a href="index.html">Homepage</a>
             <a href="projects.html">Projects</a>
             <a href="experiences.html">Experiences</a>
-            <a href="#">Contact Me</a>
+            <a href="contact.html">Contact Me</a>
         </nav>
     </header>
     <main>
-        <div class="experiences">
-            <div class="experience-card">
-                <img src="https://via.placeholder.com/300" alt="Education illustration">
-                <h2>Education</h2>
-            </div>
-            <div class="experience-card">
-                <img src="https://via.placeholder.com/300" alt="Jobs illustration">
-                <h2>Jobs</h2>
-            </div>
-            <div class="experience-card">
-                <img src="https://via.placeholder.com/300" alt="Awards illustration">
-                <h2>Awards</h2>
-            </div>
-        </div>
+        <h1>Contact Me</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
     </main>
 </body>
 </html>
