@@ -30,9 +30,11 @@ header {
 nav a {
     margin: 0 20px;
     text-decoration: none;
-    color: #555;
+    color: #000; /* Changed from #555 to #000 for better contrast */
     font-size: 1.3em;
     transition: all 0.3s ease;
+    padding: 5px 10px; /* Added padding for larger touch targets */
+    display: inline-block; /* Ensures padding is applied correctly */
 }
 
 nav a:hover {
@@ -44,6 +46,21 @@ nav a:hover {
 nav a.active {
     color: #ff69b4;
     font-weight: bold;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    z-index: 1000;
+    transition: top 0.3s;
+} /* Added skip link styles for accessibility */
+
+.skip-link:focus {
+    top: 0;
 }
 
 main {

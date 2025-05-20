@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Added user-scalable=yes for zoom accessibility -->
     <title>Home - My Website</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a> <!-- Added skip link for keyboard navigation -->
     <header>
         <nav>
             <a href="index.html" class="active">Homepage</a>
@@ -17,10 +18,10 @@
             <a href="contact.html">Contact Me</a>
         </nav>
     </header>
-    <main>
+    <main id="main-content"> <!-- Added id for skip link target -->
         <div class="hero">
             <div class="hero-image">
-                <img src="Pictures/Intro.JPG" alt="Character coding">
+                <img src="Pictures/Intro.JPG" alt="A character coding on a computer"> <!-- Updated alt text for better descriptiveness -->
             </div>
             <div class="hero-text">
                 <h1>Code with Passion, Build with Purpose</h1>

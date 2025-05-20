@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Added user-scalable=yes for zoom accessibility -->
     <title>Experiences - My Website</title>
     <link rel="stylesheet" href="experiences.css">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a> <!-- Added skip link for keyboard navigation -->
     <header>
         <nav>
             <a href="index.html">Homepage</a>
@@ -17,31 +18,31 @@
             <a href="contact.html">Contact Me</a>
         </nav>
     </header>
-    <main>
+    <main id="main-content"> <!-- Added id for skip link target -->
         <h1>My Experiences</h1>
         <div class="experiences-container">
             <div class="experience-card" data-modal="modal-education">
-                <img src="Pictures/education.JPG" alt="Education">
+                <img src="Pictures/education.JPG" alt="Educational achievements and degrees"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Education</h2>
             </div>
             <div class="experience-card" data-modal="modal-work">
-                <img src="Pictures/work.JPG" alt="Work">
+                <img src="Pictures/work.JPG" alt="Professional work experience"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Work</h2>
             </div>
             <div class="experience-card" data-modal="modal-awards">
-                <img src="Pictures/awards.JPG" alt="Awards">
+                <img src="Pictures/awards.JPG" alt="Awards and recognitions"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Awards</h2>
             </div>
             <div class="experience-card" data-modal="modal-volunteering">
-                <img src="Pictures/volunteering.JPG" alt="Volunteering">
+                <img src="Pictures/volunteering.JPG" alt="Volunteering activities"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Volunteering</h2>
             </div>
             <div class="experience-card" data-modal="modal-certifications">
-                <img src="Pictures/certifications.JPG" alt="Certifications">
+                <img src="Pictures/certifications.JPG" alt="Professional certifications"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Certifications</h2>
             </div>
             <div class="experience-card" data-modal="modal-publications">
-                <img src="Pictures/publications.JPG" alt="Publications">
+                <img src="Pictures/publications.JPG" alt="Published research papers and theses"> <!-- Updated alt text for better descriptiveness -->
                 <h2>Publications</h2>
             </div>
         </div>
@@ -95,7 +96,7 @@
                 <span class="close">×</span>
                 <h2>Volunteering</h2>
                 <ul>
-                    <li><strong>Member of Student Faculty Council</strong>, Petroleum Engineering Department, Amirkabir University of Technology, Since 2023<br>Contributed to departmental initiatives and student representation.</li>
+                    <li><strong>Member of Student Faculty Council</strong>, Petroleum Engineering Department, Amirkabir University of Technology, Since 2023<br>Contributed to departmental initiatives and student representação.</li>
                     <li><strong>Member of Student Faculty Council</strong>, Computer Engineering Department, Amirkabir University of Technology, Since 2023<br>Supported student advocacy and academic events.</li>
                     <li><strong>Member of Scientific Association of Petroleum Engineering</strong>, Amirkabir University of Technology, 2021–2023<br>Organized technical workshops and seminars.</li>
                     <li><strong>Member of Society of Petroleum Engineers (SPE)</strong>, Amirkabir University of Technology, Since 2022<br>Participated in professional development and networking events.</li>
